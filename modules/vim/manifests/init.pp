@@ -4,6 +4,9 @@ class vim {
       ensure => present,
     }
   }
+  package { "ctags":
+    ensure => present,
+  }
   File { ignore => '.git' }
   file {"/home/vagrant/.vimrc":
      content => template("vim/vimrc.erb"),
