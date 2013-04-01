@@ -1,8 +1,8 @@
 # http://vagrantup.com/v1/docs/vagrantfile.html
 
 Vagrant::Config.run do |config|
-  config.vm.box = "precise64"
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box = "quantal64"
+  config.vm.box_url = "https://github.com/downloads/roderik/VagrantQuantal64Box/quantal64.box"
 
   config.vm.network :hostonly, "33.33.33.10"
 
@@ -13,6 +13,6 @@ Vagrant::Config.run do |config|
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
     puppet.module_path = "modules"
-    puppet.manifest_file  = "symfony-dev.pp"
+    puppet.manifest_file  = "symfony-standard-dev.pp"
   end
 end

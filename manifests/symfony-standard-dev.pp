@@ -8,6 +8,7 @@ class {
     'nginx':   stage => main;
     'mysql':   stage => main;
     'dev':     stage => main;
+    'vim':     stage => main;
 }
 
 nginx::vhost {'dev': }

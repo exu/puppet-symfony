@@ -13,7 +13,7 @@ class php-fpm::install {
 class php-fpm::configure {
     exec { 'php-fpm-set-timezone':
         path => '/usr/bin:/usr/sbin:/bin',
-        command => 'sed -i \'s/^[; ]*date.timezone =.*/date.timezone = Europe\/London/g\' /etc/php5/fpm/php.ini',
+        command => 'sed -i \'s/^[; ]*date.timezone =.*/date.timezone = Europe\/Warsaw/g\' /etc/php5/fpm/php.ini',
         onlyif => 'test "`php -c /etc/php5/fpm/php.ini -r \"echo ini_get(\'date.timezone\');\"`" = ""',
         require => Class['php-fpm::install'],
         notify => Service['php5-fpm']

@@ -1,0 +1,424 @@
+snippet php
+	<?php ${1} ?>${2}
+snippet phpe
+	<?php echo ${1} ?>${2}
+snippet ec
+	echo '${1:string}'${2};
+snippet inc
+	include '${1:file}';
+	${2}
+snippet inc1
+	include_once '${1:file}';
+	${2}
+snippet req
+	require '${1:file}';
+	${2}
+snippet req1
+	require_once '${1:file}';
+	${2}
+# $GLOBALS['...']
+#snippet globals
+#	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
+snippet $_ COOKIE['...']
+	$_COOKIE['${1:variable}']${2}
+snippet $_ ENV['...']
+	$_ENV['${1:variable}']${2}
+snippet $_ FILES['...']
+	$_FILES['${1:variable}']${2}
+snippet $_ Get['...']
+	$_GET['${1:variable}']${2}
+snippet $_ POST['...']
+	$_POST['${1:variable}']${2}
+snippet $_ REQUEST['...']
+	$_REQUEST['${1:variable}']${2}
+snippet $_ SERVER['...']
+	$_SERVER['${1:variable}']${2}
+snippet $_ SESSION['...']
+	$_SESSION['${1:variable}']${2}
+# Start Docblock
+snippet /*
+	/**
+	 * ${1}
+	 */
+# Class - post doc
+snippet doc_cp
+	/**
+	 * ${1:undocumented class}
+	 *
+	 * @package    ${2:`g:snips_package`}
+	 * @subpackage ${3:`g:snips_subpackage`}
+	 * @author     `g:snips_author`
+	 * @version    SVN: $Id$
+	 */
+	 ${4}
+# Class Variable - post doc
+snippet doc_vp
+	/**
+	 * ${1:undocumented class variable}
+	 *
+	 * @var ${2:string}
+	 */
+	 ${3}
+# Class Variable
+snippet doc_v
+	/**
+	 * ${4:undocumented class variable}
+	 *
+	 * @var ${5:string}
+	 */
+	${1:private} $${2} = ${3};
+	${6}
+# Class
+snippet doc_c
+	/**
+	 * ${2:undocumented class}
+	 *
+	 * @package    ${3:`g:snips_package`}
+	 * @subpackage ${4:`g:snips_subpackage`}
+	 * @author     `g:snips_author`
+	 * @version    SVN: $Id$
+	 */
+	class ${1:}
+	{
+	  ${5}
+	}
+# Constant Definition - post doc
+snippet doc_dp
+	/**
+	 * ${1:undocumented constant}
+	 */
+	 ${2}
+# Constant Definition
+snippet doc_d
+	/**
+	 * ${3:undocumented constant}
+	 */
+	define(${1}, ${2});
+	${4}
+# Function - post doc
+snippet doc_fp
+	/**
+	 * ${1:undocumented function}
+	 *
+	 * @author `g:snips_author`
+	 * @return ${2:void}
+	 */
+	 ${3}
+# Function signature
+#snippet doc_s
+#	/**
+#	 * ${4:undocumented function}
+#	 *
+#	 * @return ${5:void}
+#	 * @author ${6:`g:snips_author`}
+#	 **/
+#	${1}function ${2}(${3});${7}
+# Function
+#snippet doc_f
+#	/**
+#	 * ${4:undocumented function}
+#	 *
+#	 * @return ${5:void}
+#	 * @author ${6:`g:snips_author`}
+#	 **/
+#	${1}function ${2}(${3})
+#	{${7}
+#	}
+# Header
+snippet doc_h
+	/**
+	 * (c) ${1:`g:snips_author`}
+	 *
+	 * @version SVN: $Id$
+	 * @author ${2:$1}
+	 * @copyright ${3:$1}, `strftime('%d %B, %Y')`
+	 * @package ${4:`g:snips_package`}
+	 */
+	${5}
+# Interface
+snippet doc_i
+	/**   
+	 * @package    ${3:`g:snips_package`}
+	 * @subpackage ${4:`g:snips_subpackage`}
+	 * @author     Leszek Prabucki <leszek.prabucki@gmail.com>
+	 * @version    SVN: $Id$
+	 */
+	interface ${1:}
+	{
+	  ${5}
+	} 
+snippet inter
+	/**    
+	 * ${2:undocumented class}
+	 *
+	 * @package    ${3:}
+	 * @subpackage ${4:}
+	 * @author     Leszek Prabucki <leszek.prabucki@gmail.com>
+	 * @version    SVN: $Id$
+	 */
+	interface ${1:}
+	{
+	  ${5}
+	} 
+# class ...
+snippet class
+
+	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
+	
+	class ${2:`Filename('', 'myClass')`}
+	{
+	    ${3}
+	}
+
+snippet classe
+
+	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
+	
+	class ${2:`Filename('', 'myClass')`} extends ${3}
+	{
+	    ${4}
+	}
+# define(...)
+snippet def
+	define('${1}'${2});
+	${3}
+# defined(...)
+snippet def?
+	${1}defined('${2}')${3}
+snippet wh
+	while (${1:/* condition */})
+	{
+		${2:// code...}
+	}
+# do ... while
+snippet do
+	do
+	{
+		${2:// code... }
+	}
+	while (${1:/* condition */});
+snippet if
+	if (${1:/* condition */})
+	{
+		${2}
+	}
+snippet ife
+	if (${1:/* condition */})
+	{
+		${2}
+	}
+	else
+	{
+		${3}
+	}
+	${4}
+snippet else
+	else
+	{
+		${1}
+	}
+snippet elseif
+	elseif (${1:/* condition */})
+	{
+		${2}
+	}
+# Tertiary conditional
+snippet t
+	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
+snippet switch
+	switch ($${1:variable})
+	{
+		case '${2:value}':
+			${3:// code...}
+			break;
+		${5}
+		default:
+			${4:// code...}
+			break;
+	}
+snippet case
+	case '${1:value}':
+		${2:// code...}
+		break;${3}
+snippet for
+	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++})
+	{
+		${4}
+	}
+snippet foreach
+	foreach ($${1:variable} as $${2:value})
+	{
+		${3}
+	}
+snippet fore value
+	foreach ($${1:variable} as $${2:value})
+	{
+		${3}
+	}
+snippet fore key => value
+	foreach ($${1:variable} as $${2:key} => $${3:value})
+	{
+		${4}
+	}
+snippet fore value (template)
+	<?php foreach ($${1:variable} as $${2:value}): ?>
+		${3}
+	<?php endforeach ?>
+snippet fore key => value (template)
+	<?php foreach ($${1:variable} as $${2:key} => $${3:value}): ?>
+		${4}
+	<?php endforeach ?>
+snippet fun
+	${1:public }function ${2:FunctionName}(${3})
+	{
+		${4}
+	}
+# $... = array (...)
+snippet array
+	$${1:arrayName} = array('${2}' => ${3});${4}
+snippet set
+	$this->set${1:Field}($${2:$1});${3}
+snippet get
+	$this->get${1:Field}();${2}
+snippet priv
+	/**
+	 * @var ${3:string}
+	 */
+	private $${1:}${2:;}
+
+	/**
+	 * @return $3
+	 */
+	public function get%ucfirst($1)()
+	{
+	    return $this->$1;
+	}
+
+	/**
+	 * @param $3 $$1
+	 */
+	public function set%ucfirst($1)($$1)
+	{
+	    $this->$1 = $$1;
+	}
+
+	${4}
+snippet prot
+	/** 
+	 * @var ${4:string}
+	 */
+	protected $${1:} = ${2:null};
+	
+	/**
+	 * @return $4
+	 */
+	public function get${6:}()
+	{
+	  return $this->$1;
+	}
+	
+	/**
+	 * @param $4
+	 */
+	public function set$6($$1)
+	{
+	  $this->$1 = $$1;
+	}
+	${8} 
+snippet ul
+	<ul> 
+	  ${1}
+	</ul>
+snippet li
+	<li>${1}</li>
+snippet getreq
+	$this->getRequest()${1:;}
+snippet getpar
+	$this->getRequest()->getParameter(${1:})${2:;}
+snippet getter
+	/**     
+	 * Returns $1
+	 * 
+	 * @return ${3:string}
+	 * @author Leszek Prabucki <leszek.prabucki@gmail.com>
+	 */
+	${4:public} function get${1:}()
+	{
+	  return $this->${2:$1};
+	}
+snippet setter
+	${1:public} function set%ucfirst($3)(${2}$$3)
+	{
+	    return $this->$3 = $${3:};
+	}
+	
+	${4}
+snippet method
+	/**       
+	 * ${5:@param} ${6:null}
+	 */
+	${4:public} function ${1:}(${2:})
+	{
+	  ${3://code}
+	}  
+snippet smethod
+	/**       
+	 * ${5:@param} ${6:null}
+	 */
+	${4:public} static function ${1:}(${2:})
+	{
+	  ${3://code}
+	}  
+snippet exe
+	 /**
+	  * @param sfRequest
+	  * @return string
+	  */
+	public function execute${1:Action}(sfRequest $request)
+	{
+	  ${3} 
+
+	  return sfView::${2:SUCCESS};
+	}
+	${4} i
+snippet wsena
+	 /** 
+	 * Execute $1 soap action
+	 *
+	 * @ws-enable
+	 * 
+	 * ${2:}
+	 * @return array $result
+	 */
+	public function execute${1:Action}(sfRequest $request)
+	{
+	  ${3:} 
+
+	  $this->result = ${4:};
+	}
+snippet link
+	link_to(${1:},${2:},${3:array()});
+snippet testm
+	/**  
+	 * Test $1 method
+	 *
+	 * @author Leszek Prabucki <leszek.prabucki@gmail.com>
+	 */
+	public function test${1:}()
+	{
+	  ${2:}
+	}
+snippet setnotnull
+	ALTER TABLE ${1:} ALTER COLUMN ${2:} SET NOT NULL;
+snippet setnull
+	ALTER TABLE ${1:} ALTER COLUMN ${2:} DROP NOT NULL;
+snippet dropcol
+	ALTER TABLE ${1:} DROP COLUMN ${2:};
+snippet dropcolc
+	ALTER TABLE ${1:} DROP COLUMN ${2:} CASCADE;
+snippet addcol
+	ALTER TABLE ${1:} ADD COLUMN ${2:};
+snippet delsql
+	DELETE FROM ${1:} WHERE ${2:} = ${3:};
+snippet exesql
+	$this->executeSQL('${1:}');

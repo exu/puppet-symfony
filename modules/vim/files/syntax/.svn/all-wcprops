@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/vim/!svn/ver/1/.vim/syntax
+END
+info.vim
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/vim/!svn/ver/1/.vim/syntax/info.vim
+END
+man.vim
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/vim/!svn/ver/1/.vim/syntax/man.vim
+END
+manphp.vim
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/vim/!svn/ver/1/.vim/syntax/manphp.vim
+END
+mankey.vim
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/vim/!svn/ver/1/.vim/syntax/mankey.vim
+END
