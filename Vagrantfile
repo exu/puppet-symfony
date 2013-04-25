@@ -4,7 +4,7 @@ Vagrant::Config.run do |config|
   config.vm.box = "quantal64"
   config.vm.box_url = "https://github.com/downloads/roderik/VagrantQuantal64Box/quantal64.box"
 
-  config.vm.network :hostonly, "33.33.33.10"
+  config.vm.network :bridged, ip: "10.0.2.110"
 
   config.vm.customize ["modifyvm", :id, "--memory", 1024]
 
