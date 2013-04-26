@@ -15,7 +15,7 @@ class symfony2 {
   exec {
     "create project":
       environment => "COMPOSER_PROCESS_TIMEOUT=3600",
-      command => "export COMPOSER_PROCESS_TIMEOUT=3600; php composer.phar --no-interaction --prefer-source create-project symfony/framework-standard-edition vagrant.dev",
+      command => "php composer.phar --no-interaction --prefer-source create-project symfony/framework-standard-edition vagrant.dev",
       cwd => "/home/vagrant",
       user => "vagrant",
       path    => "/usr/bin/:/bin/",
