@@ -43,6 +43,6 @@ Base project installed in `/home/vagrant/vagrant.dev` directory
 
 
 ### Networking details
-- VMs network is configured in host-only mode to handle IP 10.0.100.110.
-- Your client accessing it with IP: 10.0.100.110.
-- You can =ssh vagrant@10.0.100.110= (default password is =vagrant=)
+- VMs network is configured in host-only mode to handle IP `10.0.100.110`.
+- Your client accessing it with IP: `10.0.100.110`.
+- You can `ssh vagrant@10.0.100.110` (default password is `vagrant`)
