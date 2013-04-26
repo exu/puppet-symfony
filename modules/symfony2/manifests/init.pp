@@ -14,6 +14,7 @@ class symfony2 {
 
   exec {
     "create project":
+      environment => "COMPOSER_PROCESS_TIMEOUT=600",
       command => "php composer.phar --prefer-source create-project symfony/framework-standard-edition vagrant.dev",
       cwd => "/home/vagrant",
       user => "vagrant",
