@@ -17,4 +17,16 @@ class emacs {
     ensure => present,
     require => Exec["apt-get update 2"],
   }
+
+  exec { 'apt-get update 2':
+    command => '/usr/bin/apt-get update',
+    require => [ Apt::Ppa["ppa:cassou/emacs"] ],
+  }
+
+  exec { 'basic config':
+    command => 'curl -L https://raw.github.com/exu/emacs.d/master/micro.emacs.el > .emacs',
+    require => [ Apt::Ppa["ppa:cassou/emacs"] ],
+  }
+
+
 }
