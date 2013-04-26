@@ -14,12 +14,13 @@ class symfony2 {
 
   exec {
     "create project":
-      command => "php composer.phar create-project symfony/framework-standard-edition vagrant.dev",
+      command => "php composer.phar --prefer-source create-project symfony/framework-standard-edition vagrant.dev",
       cwd => "/home/vagrant",
       user => "vagrant",
       path    => "/usr/bin/:/bin/",
       require => Exec["composer install"],
       logoutput => true,
+      timeout => 600,
   }
 
   exec {

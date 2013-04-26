@@ -4,7 +4,12 @@ Puppet modules for Symfony development with Vagrant
 Quick start
 -----------
 
-Clone the puppet modules and manifests into your project:
+### Install vagrant and puppet
+
+- Vagrant - installed it from http://downloads.vagrantup.com/tags/v1.2.2
+- Puppet - installed from `gem install puppet`
+
+### Clone the puppet modules and manifests into your project:
 
 ```bash
 cd your-project
@@ -20,7 +25,7 @@ cat .puppet/Vagrantfile |
     sed -e 's/module_path = "modules"/module_path = ".puppet\/modules"/g' > Vagrantfile
 ```
 
-Boot your virtual machine:
+### Boot your virtual machine:
 
 ```bash
 vagrant up
