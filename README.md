@@ -19,7 +19,7 @@ git clone git://github.com/exu/puppet-symfony.git .puppet
 ### Copy Vagrantfile
 
 ```bash
-cp .puppet/Vagrantfile .
+ln -s .puppet/Vagrantfile ./Vagrantfile
 ```
 
 ### Boot your virtual machine:
@@ -33,6 +33,16 @@ ssh into it once it boots:
 ```bash
 vagrant ssh
 ```
+
+### Or in copy-paste-mode :)
+
+```
+git clone git://github.com/exu/puppet-symfony.git .puppet
+ln -s .puppet/Vagrantfile ./Vagrantfile
+vagrant up
+vagrant ssh
+```
+
 
 ### Symfony Standard Edition
 
