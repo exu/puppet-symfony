@@ -16,6 +16,12 @@ cd your-project
 git clone git://github.com/exu/puppet-symfony.git .puppet
 ```
 
+### Copy Vagrantfile
+
+```bash
+cp .puppet/Vagrantfile .
+```
+
 ### Boot your virtual machine:
 
 ```bash
@@ -30,7 +36,7 @@ vagrant ssh
 
 ### Symfony Standard Edition
 
-Base project installed in `/home/vagrant/vagrant.dev` directory
+Base project will be installed in `/home/vagrant/vagrant.dev` directory
 
 
 ### Networking details
