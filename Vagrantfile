@@ -5,16 +5,11 @@ Vagrant::Config.run do |config|
   config.vm.network :hostonly, "10.0.100.110", :netmask => "255.255.252.0"
 
   config.vm.customize ["modifyvm", :id, "--memory", 1024]
-
-  dir = File.expand_path("~/Training")
-  FileUtils.mkdir dir unless File.exists?(dir)
-
-  config.vm.share_folder "vagrant.dev", "/home/vagrant/vagrant.dev", dir
-  # config.vm.share_folder "symfony", "/home/vagrant/symfony", ".", :nfs => true
+  config.vm.share_folder "vagrant.dev", "/home/vagrant/vagrant.dev", dir, :create => true
 
   config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "manifests"
-    puppet.module_path = "modules"
+    puppet.manifests_path = ".puppet/manifests"
+    puppet.module_path = ".puppet/modules"
     puppet.manifest_file  = "symfony-standard-dev.pp"
   end
 end

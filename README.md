@@ -16,15 +16,6 @@ cd your-project
 git clone git://github.com/exu/puppet-symfony.git .puppet
 ```
 
-Create a Vagrantfile and configure manifests and module paths. You can use
-provided example:
-
-```bash
-cat .puppet/Vagrantfile |
-    sed -e 's/manifests_path = "manifests"/manifests_path = ".puppet\/manifests"/g' |
-    sed -e 's/module_path = "modules"/module_path = ".puppet\/modules"/g' > Vagrantfile
-```
-
 ### Boot your virtual machine:
 
 ```bash
