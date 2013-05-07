@@ -36,7 +36,7 @@ class symfony2 {
 
   exec {
     "controllers ip permissions":
-      command => "sed -i 's/::1/10.0.100.1/' web/app_dev.php; sed -i 's/::1/10.0.100.1/' web/config.php",
+      command => "sed -i 's/fe80::1/\'10.0.100.1/' web/app_dev.php; sed -i 's/::1/10.0.100.1/' web/config.php",
       cwd => "/home/vagrant/vagrant.dev",
       user => "vagrant",
       path    => "/usr/bin/:/bin/",
