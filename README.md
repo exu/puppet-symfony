@@ -65,8 +65,11 @@ sudo sh -c 'echo "10.0.100.110 vagrant.dev" >> /etc/hosts'
 
 ### Editing files on VM
 
+To edit files you can install sshfs ```sudo apt-get install sshfs``` and then mount project directory
+wherever you want (I've mounted it in  /home/exu/Training directory)
+
 ```
 sshfs vagrant@10.0.100.110:/home/vagrant/vagrant.dev /home/exu/Training
 ```
 
-If you don't want to enter your password you can execute ```ssh-copy-id vagrant@10.0.100.110``` first.
+If you don't want to enter your password you can execute ```ssh-copy-id vagrant@10.0.100.110``` first (if you use PKI).
