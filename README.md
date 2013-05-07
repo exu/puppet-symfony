@@ -62,3 +62,11 @@ sudo sh -c 'echo "10.0.100.110 vagrant.dev" >> /etc/hosts'
 - VMs network is configured in host-only mode to handle IP `10.0.100.110`.
 - Your client accessing it with IP: `10.0.100.1`.
 - You can `ssh vagrant@10.0.100.110` (default password is `vagrant`)
+
+### Editing files on VM
+
+```
+sshfs vagrant@10.0.100.110:/home/vagrant/vagrant.dev /home/exu/Training
+```
+
+If you don't want to enter your password you can execute ```ssh-copy-id vagrant@10.0.100.110``` first.
